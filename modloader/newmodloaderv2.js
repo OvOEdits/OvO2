@@ -6,7 +6,7 @@
     class ModLoader {
         constructor(runtime) {
             window.ovoModLoader = this;
-
+            runtime = c3_runtimeInterface._GetLocalRuntime();
             this.runtime = runtime;
             this.initialised = false;
             this.mods = {};
