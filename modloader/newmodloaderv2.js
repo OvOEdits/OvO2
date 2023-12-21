@@ -17,7 +17,7 @@
 
         async #init() {
             this.mods = await fetch(this.getModDirectory() + "v2.json").then(res => res.json());
-            this.loadModURL("modapi.js", true, false);
+            this.loadModURL("resetbutton.js", true, false);
 
             window.addEventListener("keydown", (event) => {
                 if (event.code === "KeyL") {
