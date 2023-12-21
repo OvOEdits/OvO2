@@ -187,8 +187,8 @@
         } else {
             console.log("Modloader: C3 runtime not loaded yet, hooking into createRuntime");
             const createCommand = window.C3_CreateRuntime;
-            const hookCommand = (canvasId) => {
-                new ModLoader(createCommand(canvasId));
+            const hookCommand = () => {
+                new ModLoader(createCommand());
             }
             window.C3_CreateRuntime = hookCommand;
         }
