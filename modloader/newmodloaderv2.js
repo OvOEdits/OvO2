@@ -17,7 +17,7 @@
 
         async #init() {
             this.mods = await fetch(this.getModDirectory() + "v2.json").then(res => res.json());
-            this.loadModURL("resetbutton.js", true, false);
+            this.loadModURL("modapi.js", true, false);
 
             window.addEventListener("keydown", (event) => {
                 if (event.code === "KeyL") {
@@ -186,7 +186,7 @@
             new ModLoader(window.c3_runtimeInterface._GetLocalRuntime());
         } else {
             console.log("Modloader: C3 runtime not loaded yet, hooking into createRuntime");
-            const createCommand = window.cr_createRuntime;
+            const createCommand = window.C3_CreateRuntime;
             const hookCommand = (canvasId) => {
                 new ModLoader(createCommand(canvasId));
             }
